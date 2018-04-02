@@ -5,17 +5,18 @@
  */
 
 const getWordFrequency = (words) => {
-    const wordsWithoutSpecialCharacters = words.replace(/[\.\?\-_$£¨!^`'=)(\/\\&%\*"+§°:;,]/g, '');
+    const wordsWithoutSpecialCharacters = words.replace(/[\.\?\-_$£¨!^`'=)(\/\\&%\*"+§°:;,{}]/g, '');
     const wordsWithoutTooLongOrEmptyOnes = wordsWithoutSpecialCharacters.split(' ')
         .filter((word) => word.length != 0 && word.length < 30);
 
     const results = {};
 
     wordsWithoutTooLongOrEmptyOnes.forEach((word) => {
-        if (results[word]) {
-            ++results[word].size
+        const lowerCaseWord = word.toLowerCase();
+        if (results[lowerCaseWord]) {
+            ++results[lowerCaseWord].size
         } else {
-            results[word] = { text: word, size: 1 }
+            results[lowerCaseWord] = { text: lowerCaseWord, size: 1 }
         }
     });
 
