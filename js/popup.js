@@ -11,14 +11,14 @@ function clickHandler(element) {
     };
 
     const responseCallBack = (response) => {
-        console.log(response.chatMessages);
-        console.log(response.emojis);
 
-        // d3.wordcloud()
-        //     .size([500, 300])
-        //     .fill(d3.scale.ordinal().range(["#884400", "#448800", "#888800", "#444400"]))
-        //     .words(words)
-        //     .start();
+        const words = getWordFrequency(response.chatMessages);
+
+        d3.wordcloud()
+            .size([800, 600])
+            .fill(d3.scale.ordinal().range(["#884400", "#448800", "#888800", "#444400"]))
+            .words(words)
+            .start();
     }
 
     const tabCallBack = (tabs) => {

@@ -1,5 +1,5 @@
 var words = [
-    {text: 'have', size: 102},
+    {text: 'have', size: 500},
     {text: 'Oliver', size: 47},
     {text: 'say', size: 46},
     {text: 'said', size: 36},
