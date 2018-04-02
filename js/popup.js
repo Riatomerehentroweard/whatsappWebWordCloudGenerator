@@ -6,7 +6,7 @@ function clickHandler(element) {
     const generator = document.querySelector('#wordCloudGenerator');
 
     // chrome.tabs.getCurrent
-    
+
     // var port = chrome.runtime.tabs.connect(chrome.tabs.getCurrent(), { name: "knockknock" });
     // port.postMessage({ joke: "Knock knock" });
     // port.onMessage.addListener(function (msg) {
@@ -15,6 +15,20 @@ function clickHandler(element) {
     //     else if (msg.question == "Madame who?")
     //         port.postMessage({ answer: "Madame... Bovary" });
     // });
+
+
+
+    d3.wordcloud()
+        .size([500, 300])
+        .fill(d3.scale.ordinal().range(["#884400", "#448800", "#888800", "#444400"]))
+        .words(words)
+        .onwordclick(function (d, i) {
+            if (d.href) { window.location = d.href; }
+        })
+        .start();
+
+
+
 
     const tabQuery = {
         active: true,

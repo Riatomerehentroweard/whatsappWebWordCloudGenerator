@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,17 +12,26 @@
     <link rel="stylesheet" href="css/custom.css">
 
     <script src="js/bootstrap.min.js"></script>
+    
+    <!-- wordcloud libraries -->
+    <script src="js/lib/d3.js" charset="utf-8"></script>
+    <script src="js/lib/d3.layout.cloud.js"></script>
+    <script src="js/lib/d3.wordcloud.js"></script>
+    <script src="words.js"></script>
+
     <script src="js/popup.js"></script>
 
 </head>
+
 <body class="container">
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 100%;">
         <div class="card-body">
-          <h5 class="card-title">Whatsapp Web Wordcloud Generator</h5>
-          <p class="card-text">To create a wordcloud please open the chat in WhatsappWeb you want to use as source-text.</p>
-          <button id="wordCloudGenerator" type="button" class="btn btn-primary">Generate Wordcloud</button>
+            <h5 class="card-title">Whatsapp Web Wordcloud Generator</h5>
+            <p class="card-text">To create a wordcloud please open the chat in WhatsappWeb you want to use as source-text.</p>
+            <button id="wordCloudGenerator" type="button" class="btn btn-primary">Generate Wordcloud</button>
         </div>
-        <img class="card-img-top" src="..." alt="Card image cap">
-      </div>
+        <div id='wordcloud'></div>
+    </div>
 </body>
+
 </html>
